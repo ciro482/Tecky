@@ -1,0 +1,30 @@
+settings:
+    name: TeckyBot
+
+conversations:
+    - 'hello.yaml'
+    - 'respuesta.yaml'
+
+slots:
+    - name
+
+strategies:
+    name:
+    - say "¿Cual es tu nombre?"
+    - input name
+    - remember name
+
+    negativo:
+    - say "Nos vemos pronto"
+    
+script: 
+    - solve hello
+    - loop_slots
+    - say "Hola {} soy TeckyBot".format(name)
+    - say "Mi proposito es ayudarte a conocer si la carrera ISC es para ti"
+    - say "La carrera ISC cuenta con 5 doctores, 7 maestros, 1 ingenieros" 
+    - say "Tiene lineas de investigación en Aprendizaje Automático y aplicaciones, visión Computacional, modelos Gráficos Probabilistas, minería de datos, redes neuronales, Deep Learning, proceamiento de bioseñales y computación médica, computación Cognitiva." 
+    - say "¿deseas hacer una encuesta para ver si este perfil es favorable para ti? "
+    - input answr | asign si:ok no:oknt
+    - if answr == "ok" then solve respuesta
+    - if answr == "oknt" then solve negativo

@@ -1,0 +1,60 @@
+strategies:
+    encuesta:   
+    - say "¿Te gustan los juegos y actividades que necesitan mucho razonamiento?"
+    - input respuesta1
+    - remember respuesta1
+    - say "¿Te fijas en los detalles aún más pequeños?"       
+    - input respuesta2
+    - remember respuesta2
+    - say "Si algo te sale mal, ¿buscas justo en dónde se generó el problema?"      
+    - input respuesta3
+    - remember respuesta3
+    - say "¿Tienes la capacidad de hacer la conexión entre datos para sacar conclusiones?"
+    - input respuesta4
+    - remember respuesta4
+    - say "¿Te consideras autodidacta?"
+    - input respuesta5
+    - remember respuesta5
+    - say "¿Tienes la capacidad de estar bajo estrés constante?"
+    - input respuesta6
+    - remember respuesta6
+    - say  "¿Tienes liderazgo al trabajar en grupo?" 
+    - input respuesta7
+    - remember respuesta7
+    - say "¿Consideras que aportas ideas interesantes o eres un buen integrante dentro de un equipo de trabajo?" 
+    - input respuesta8
+    - remember respuesta8
+    - say "¿Te mantienes actualizado en tecnología?"  
+    - input respuesta9
+    - remember respuesta9
+    - say "¿Consideras que tienes la habilidad de adaptarte a distintos lenguajes de programación?"
+    - input respuesta10
+    - remember respuesta10
+    conteo:
+    - execute self.slots['contador']+=1
+    entra:
+    - say "Según la evaluación aplicada, esta carrera si es apta para ti, ya que si cuentas con las cosas necesarias para ser un buen ingeniero en sistemas"
+    noentra:
+    - say "Según la evaluación aplicada, esta carrera no es apta para ti, ya que no cuentas con las cosas necesarias para ser un buen ingeniero en sistemas"
+        
+
+
+script:
+    - solve encuesta
+    - add_slot contador
+    - set_slot contador 0
+    - add_slot res 
+    - set_slot res "si"
+    - if respuesta1 == "si" then solve conteo
+    - if respuesta2 == "si" then solve conteo
+    - if respuesta3 == "si" then solve conteo
+    - if respuesta4 == "si" then solve conteo
+    - if respuesta5 == "si" then solve conteo
+    - if respuesta6 == "si" then solve conteo
+    - if respuesta7 == "si" then solve conteo
+    - if respuesta8 == "si" then solve conteo
+    - if respuesta9 == "si" then solve conteo
+    - if respuesta10 == "si" then solve conteo
+    - if contador > 6 then solve entra
+    - if contador < 6 then solve noentra
+    
