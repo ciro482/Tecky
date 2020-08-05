@@ -1,0 +1,3 @@
+[submodule "chatvoice"]
+	path = chatvoice
+	url = https://github.com/ivanvladimir/chatvoice.git
