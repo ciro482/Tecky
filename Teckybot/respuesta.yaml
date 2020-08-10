@@ -36,6 +36,8 @@ strategies:
     - say "Según la evaluación aplicada, esta carrera si es apta para ti, ya que si cuentas con las cosas necesarias para ser un buen ingeniero en sistemas"
     noentra:
     - say "Según la evaluación aplicada, esta carrera no es apta para ti, ya que no cuentas con las cosas necesarias para ser un buen ingeniero en sistemas"
+    despedida:
+    - say "Nos vemos pronto, bye"
         
 
 
@@ -57,4 +59,5 @@ script:
     - if respuesta10 == "si" then solve conteo
     - if contador > 6 then solve entra
     - if contador < 6 then solve noentra
+    - solve despedida
     
