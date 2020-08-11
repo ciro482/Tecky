@@ -58,6 +58,6 @@ script:
     - if respuesta9 == "si" then solve conteo
     - if respuesta10 == "si" then solve conteo
     - if contador > 6 then solve entra
-    - if contador < 6 then solve noentra
+    - if contador <= 6 then solve noentra
     - solve despedida
     
