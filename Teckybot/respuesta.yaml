@@ -47,7 +47,7 @@ script:
     - set_slot contador 0
     - add_slot res 
     - set_slot res "si"
-    - if respuesta1 == "si" then solve conteo
+    - if respuesta1 == "si" || respuesta1 == "Si" then solve conteo
     - if respuesta2 == "si" then solve conteo
     - if respuesta3 == "si" then solve conteo
     - if respuesta4 == "si" then solve conteo
