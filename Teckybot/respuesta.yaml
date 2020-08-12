@@ -3,13 +3,13 @@ strategies:
     - say "¿Te gustan los juegos y actividades que necesitan mucho razonamiento?"
     - input respuesta1
     - remember respuesta1
-    - say "¿Te fijas en los detalles aún más pequeños?"       
+    - say "¿Eres atento a los detalles?"       
     - input respuesta2
     - remember respuesta2
-    - say "Si algo te sale mal, ¿buscas justo en dónde se generó el problema?"      
+    - say "Si algo te sale mal, ¿buscas en dónde se generó el problema?"      
     - input respuesta3
     - remember respuesta3
-    - say "¿Tienes la capacidad de hacer la conexión entre datos para sacar conclusiones?"
+    - say "¿Tienes la capacidad de hacer una conexión entre datos para obtener conclusiones?"
     - input respuesta4
     - remember respuesta4
     - say "¿Te consideras autodidacta?"
@@ -33,9 +33,9 @@ strategies:
     conteo:
     - execute self.slots['contador']+=1
     entra:
-    - say "Según la evaluación aplicada, esta carrera si es apta para ti, ya que si cuentas con las cosas necesarias para ser un buen ingeniero en sistemas"
+    - say "Según la evaluación aplicada, esta carrera si es apta para ti, ya que si cuentas con las aptitudes necesarias para ser un buen ingeniero en sistemas"
     noentra:
-    - say "Según la evaluación aplicada, esta carrera no es apta para ti, ya que no cuentas con las cosas necesarias para ser un buen ingeniero en sistemas"
+    - say "Según la evaluación aplicada, esta carrera no es apta para ti, ya que no cuentas con las aptitudes necesarias para ser un buen ingeniero en sistemas"
     despedida:
     - say "Nos vemos pronto, bye"
         
