@@ -34,6 +34,8 @@ strategies:
     - remember respuesta10
     conteo:
     - execute self.slots['contador']+=1
+    
+    entra:
     - say "¿Cual es tu correo"
     - input entrada
     - say "Según la evaluación aplicada, esta carrera no es apta para ti, ya que no cuentas con las aptitudes necesarias para ser un buen ingeniero en sistemas"
