@@ -1,3 +1,5 @@
+plugins:
+    - correo
 strategies:
     encuesta:   
     - say "¿Te gustan los juegos y actividades que necesitan mucho razonamiento?"
@@ -32,8 +34,12 @@ strategies:
     - remember respuesta10
     conteo:
     - execute self.slots['contador']+=1
-    entra:
-    - say "Según la evaluación aplicada, esta carrera si es apta para ti, ya que si cuentas con las aptitudes necesarias para ser un buen ingeniero en sistemas"
+    - say "¿Cual es tu correo"
+    - input entrada
+    - say "Según la evaluación aplicada, esta carrera no es apta para ti, ya que no cuentas con las aptitudes necesarias para ser un buen ingeniero en sistemas"
+    - set_slot options ["Según la evaluación aplicada, esta carrera si es apta para ti, ya que si cuentas con las cosas necesarias para ser un buen ingeniero en sistemas"]
+    - correo.execute(options,entrada)
+
     noentra:
     - say "Según la evaluación aplicada, esta carrera no es apta para ti, ya que no cuentas con las aptitudes necesarias para ser un buen ingeniero en sistemas"
     despedida:
