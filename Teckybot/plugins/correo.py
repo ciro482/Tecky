@@ -22,7 +22,7 @@ def execute(*args):
     serverSMTP.ehlo() 
     serverSMTP.starttls() 
     serverSMTP.ehlo() 
-    serverSMTP.login(emisor,"Pollos23$$") 
+    serverSMTP.login(emisor,"Contrasena") 
     serverSMTP.sendmail(emisor,receptor,mensaje.as_string()) 
     serverSMTP.close()
     return 'set_slot listo'
